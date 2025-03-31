@@ -1,0 +1,13 @@
+faiss-cpu
+huggingface-hub
+ibm-generative-ai
+langchain
+Pillow
+sentence-transformers
+streamlit
+pypdf
+python-dotenv
+numpy
+pandas
+seaborn
+matplotlib

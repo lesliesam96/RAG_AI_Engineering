@@ -1,0 +1,111 @@
+<mxfile host="Electron" modified="2023-06-26T07:35:44.248Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.5.0 Chrome/112.0.5615.204 Electron/24.5.1 Safari/537.36" etag="yqGtWjUoIdPUXkNjjMEl" version="21.5.0" type="device">
+  <diagram name="Page-1" id="5j2JG0OSZ1h5RDzCl4oF">
+    <mxGraphModel dx="849" dy="554" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-18" value="query embeddings" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="In71V8KGqIcSNTV8_Hjw-16" target="In71V8KGqIcSNTV8_Hjw-4" edge="1">
+          <mxGeometry x="-0.2178" y="20" relative="1" as="geometry">
+            <mxPoint x="500" y="250" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="540" y="190" />
+              <mxPoint x="540" y="190" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-32" value="1- Load Documents" style="fontStyle=0;verticalAlign=top;align=left;spacingTop=-2;fillColor=none;rounded=0;whiteSpace=wrap;html=1;strokeColor=#919191;strokeWidth=2;dashed=1;container=1;collapsible=0;expand=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="760" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-8" value="documents" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="In71V8KGqIcSNTV8_Hjw-32" source="In71V8KGqIcSNTV8_Hjw-3" target="In71V8KGqIcSNTV8_Hjw-45" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-3" value="Doc db" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.webicons.adobe_pdf;fillColor=#F40C0C;gradientColor=#610603" parent="In71V8KGqIcSNTV8_Hjw-32" vertex="1">
+          <mxGeometry x="21" y="39.99999999999999" width="60" height="66.2" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-4" value="Vector DataBase" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=default;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/data/data_services.svg;" parent="In71V8KGqIcSNTV8_Hjw-32" vertex="1">
+          <mxGeometry x="481" y="43.099999999999994" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-7" value="embeddings" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="In71V8KGqIcSNTV8_Hjw-32" source="In71V8KGqIcSNTV8_Hjw-5" target="In71V8KGqIcSNTV8_Hjw-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-5" value="Extract embeddings" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=default;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/data/caches.svg;" parent="In71V8KGqIcSNTV8_Hjw-32" vertex="1">
+          <mxGeometry x="321" y="43.099999999999994" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-9" value="Phase 1 : Read documents, split in chunks, extract embedings, store in vector database" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="In71V8KGqIcSNTV8_Hjw-32" vertex="1">
+          <mxGeometry x="10" y="143.1" width="490" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-46" value="chunks" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="In71V8KGqIcSNTV8_Hjw-32" source="In71V8KGqIcSNTV8_Hjw-45" target="In71V8KGqIcSNTV8_Hjw-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-45" value="splitter" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=default;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/runtime_services.svg;" parent="In71V8KGqIcSNTV8_Hjw-32" vertex="1">
+          <mxGeometry x="160" y="43.099999999999994" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-42" value="2- Query Documents" style="fontStyle=0;verticalAlign=top;align=left;spacingTop=-2;fillColor=none;rounded=0;whiteSpace=wrap;html=1;strokeColor=#919191;strokeWidth=2;dashed=1;container=1;collapsible=0;expand=0;recursiveResize=0;" parent="1" vertex="1">
+          <mxGeometry x="40" y="280" width="769" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-11" value="User" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=default;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/users/user.svg;" parent="In71V8KGqIcSNTV8_Hjw-42" vertex="1">
+          <mxGeometry x="19" y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-12" value="Chat interface" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=default;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/data/conversation_trained_deployed.svg;" parent="In71V8KGqIcSNTV8_Hjw-42" vertex="1">
+          <mxGeometry x="164" y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="In71V8KGqIcSNTV8_Hjw-42" source="In71V8KGqIcSNTV8_Hjw-11" target="In71V8KGqIcSNTV8_Hjw-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-30" value="answer+source info" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="In71V8KGqIcSNTV8_Hjw-42" source="In71V8KGqIcSNTV8_Hjw-16" target="In71V8KGqIcSNTV8_Hjw-12" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="349" y="80" />
+              <mxPoint x="349" y="80" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-16" value="Retrieve documents &lt;br&gt;by similarity and build answer &lt;br&gt;using langchain&lt;br&gt;&lt;code class=&quot;docutils literal notranslate&quot;&gt;RetrievalQA&lt;/code&gt;" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=default;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/applications/runtime_services.svg;" parent="In71V8KGqIcSNTV8_Hjw-42" vertex="1">
+          <mxGeometry x="470" y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-15" value="query" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="In71V8KGqIcSNTV8_Hjw-42" source="In71V8KGqIcSNTV8_Hjw-12" target="In71V8KGqIcSNTV8_Hjw-16" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="315" y="40" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="269" y="60" />
+              <mxPoint x="269" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-10" value="Phase 2 : Get user query, extract embedings, retrieve documents by similarity, send question+docs to Generative AI for summary" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="In71V8KGqIcSNTV8_Hjw-42" vertex="1">
+          <mxGeometry y="180" width="710" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-19" value="watsonx.ai LLM" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=default;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/analytics/analytics.svg;" parent="In71V8KGqIcSNTV8_Hjw-42" vertex="1">
+          <mxGeometry x="680" y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-20" value="query and matching chunk" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="In71V8KGqIcSNTV8_Hjw-42" source="In71V8KGqIcSNTV8_Hjw-16" target="In71V8KGqIcSNTV8_Hjw-19" edge="1">
+          <mxGeometry x="-0.0431" y="10" relative="1" as="geometry">
+            <mxPoint x="610" y="50" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="670" y="60" />
+              <mxPoint x="670" y="60" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-44" value="answer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="In71V8KGqIcSNTV8_Hjw-42" source="In71V8KGqIcSNTV8_Hjw-19" target="In71V8KGqIcSNTV8_Hjw-16" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="670" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="In71V8KGqIcSNTV8_Hjw-43" value="matching chunks+metadata" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="In71V8KGqIcSNTV8_Hjw-4" target="In71V8KGqIcSNTV8_Hjw-16" edge="1">
+          <mxGeometry x="0.4209" y="30" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="210" />
+              <mxPoint x="550" y="210" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

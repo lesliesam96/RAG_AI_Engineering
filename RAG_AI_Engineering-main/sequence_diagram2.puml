@@ -1,0 +1,41 @@
+@startuml
+actor User
+
+User -> MainApp: Upload File
+MainApp -> Loader: load_file(file)
+Loader -> DocumentLoader: load_and_split(file)
+DocumentLoader -> TextSplitter: split_text(file)
+DocumentLoader --> Loader: return chunks
+Loader --> MainApp: return loaded file
+
+MainApp -> VectorStore: create_store(chunks)
+VectorStore -> Embedding: create_embeddings(chunks)
+VectorStore --> MainApp: return vector_store
+
+MainApp -> Retriever: setup_retriever(vector_store)
+Retriever --> VectorStore: setup complete
+
+User -> MainApp: Ask Question
+MainApp -> Agent: process_query(question)
+Agent -> LangChainInterface: run(query)
+LangChainInterface --> Agent: return answer
+Agent --> MainApp: return answer
+MainApp --> User: display answer
+
+@enduml
+
+Explanation:
+File Upload and Loading:
+
+The User uploads a file, triggering the MainApp to call Loader to load the file.
+Loader passes the file to DocumentLoader, which uses TextSplitter to divide the file into chunks, returning these chunks back to MainApp.
+Vector Store Creation:
+
+MainApp then creates a vector store using VectorStore, which processes the document chunks through Embedding to generate embeddings.
+Retriever Setup:
+
+The MainApp sets up the Retriever with the created vector store for future query processing.
+Query Processing:
+
+The User submits a question, which MainApp sends to Agent.
+Agent interacts with the LangChainInterface to run the query and generate an answer, which is returned back to the User.

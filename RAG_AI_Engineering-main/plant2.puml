@@ -1,0 +1,88 @@
+@startuml
+class MainApp {
+    +st.session_state: Dict
+    +file_path: str
+    +selected_template: PromptTemplate
+    +vector_db_creation(file)
+    +process_csv(df)
+    +initqachain(...)
+}
+
+class VectorStore {
+    +documentchunks: List
+    +embedmodel: str
+    +embeddings: HuggingFaceEmbeddings
+    +create_store()
+    +as_retriever()
+}
+
+class Retriever {
+    +bm25_retriever: BM25Retriever
+    +ensemble_retriever: EnsembleRetriever
+    +create_retriever()
+}
+
+class Loader {
+    +temp_file_path: str
+    +load_file(file)
+}
+
+class Agent {
+    +model: LangChainInterface
+    +custom_prompt: PromptTemplate
+    +create_pandas_agent(df)
+}
+
+class Embedding {
+    +model_name: str
+    +model_kwargs: dict
+    +create_embeddings()
+}
+
+class DocumentLoader {
+    +load_and_split(text_splitter)
+    +load_file(file)
+}
+
+class TextSplitter {
+    +chunk_size: int
+    +chunk_overlap: int
+    +split_text(text)
+}
+
+class PromptTemplate {
+    +template: str
+    +input_variables: List
+    +generate_prompt(context, question)
+}
+
+class LangChainInterface {
+    +model_id: str
+    +parameters: TextGenerationParameters
+    +run(query)
+}
+
+MainApp --> VectorStore : uses (Association)
+MainApp ..> Loader : depends on (Dependency)
+MainApp o-- Retriever : has (Aggregation)
+VectorStore *-- Retriever : tightly coupled (Composition)
+Agent --> VectorStore : accesses (Association)
+Loader --> MainApp : returns data to (Association)
+Retriever <|-- BM25Retriever : inherits (Inheritance)
+Retriever <|-- EnsembleRetriever : inherits (Inheritance)
+Embedding --> VectorStore : provides embeddings (Association)
+DocumentLoader ..> TextSplitter : uses (Dependency)
+DocumentLoader --> Loader : extends (Association)
+TextSplitter ..> DocumentLoader : assists (Dependency)
+Agent --> LangChainInterface : uses (Association)
+PromptTemplate ..> Agent : is used by (Dependency)
+
+@enduml
+
+
+The updated class diagram illustrates the main components of your code, showcasing how different classes interact with each other. 
+The MainApp class serves as the central application, managing user interactions and processes such as file handling, vector store creation, and AI-based processing. 
+It uses the VectorStore class, which manages document embeddings and retrieval through composition with Retriever, which handles retrieval mechanisms like BM25 and ensemble retrievers. 
+The Loader class is responsible for loading different file types, while DocumentLoader utilizes TextSplitter to divide documents into manageable chunks for embedding. 
+The Embedding class provides the necessary embeddings using HuggingFace models to VectorStore, enhancing its search capabilities. The Agent class, which utilizes the LangChainInterface, interfaces with AI models to generate responses based on the data and PromptTemplate, which structures the prompts used. 
+The diagram effectively captures the dependencies, associations, and relationships among these classes, reflecting the modular and interconnected design of the code, emphasizing reusability and clear responsibility delegation among components.
