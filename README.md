@@ -44,7 +44,7 @@ Here's a professional template you can use to add **How to Use** and **Demo Vide
 
 ### 🎥 Demo Video
 
-[![Watch the Demo][(demo_image.png)](https://link-to-your-demo-video.com)](https://youtu.be/n8chC1RQXlo)
+[![Watch the Demo](https://link-to-your-demo-video.com)](https://youtu.be/n8chC1RQXlo)
 
 >  *Click the image to watch the full demo*
 
