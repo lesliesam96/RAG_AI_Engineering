@@ -1,6 +1,4 @@
-Here's a professional template you can use to add **How to Use** and **Demo Video** sections to your `README.md`:
 
----
 
 ###  How to Use
 
