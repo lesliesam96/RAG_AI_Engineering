@@ -19,7 +19,8 @@ Here's a professional template you can use to add **How to Use** and **Demo Vide
 3. **Install dependencies**
    ```bash
    pip install -r requirements.txt
-   ```
+   ```![Uploading demo_image.png…]()
+
 
 4. **Set up environment variables**  
    Create a `.env` file in the `app` directory and add your API keys:
@@ -43,7 +44,7 @@ Here's a professional template you can use to add **How to Use** and **Demo Vide
 
 ### 🎥 Demo Video
 
-[![Watch the Demo](demo_image.png)](https://link-to-your-demo-video.com)
+[![Watch the Demo][(demo_image.png)](https://link-to-your-demo-video.com)](https://youtu.be/n8chC1RQXlo)
 
 >  *Click the image to watch the full demo*
 
